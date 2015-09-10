@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Widgets</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="CMP SCI 3010; Project 2">             
+  <meta name="author" content="Dan Wilder">
+
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    input {
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    function validateForm() {
+      var x = document.getElementById("in1").value;
+      var y = document.getElementById("in2").value;
+      var z = document.getElementById("in3").value;
+
+      if (x < 0 || y < 0 || z < 0) {
+        alert("Error! Negative number detected!")
+        return false;
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+<form action="server.php" onsubmit="return validateForm()" method="post">
+  <table>
+    <tr>
+      <th>Model Number</th>
+      <th>Price</th>
+      <th>Amount</th>
+    </tr>
+
+    <tr>
+      <td>37AX-L</td>
+      <td>$12.45</td>
+      <td><input name="AXL" type = "text" value ="0" size="5" id="in1"></td>
+    </tr>
+
+    <tr>
+      <td>42XR-J</td>
+      <td>$15.34</td>
+      <td><input name = "XRJ" type = "text" value ="0" size="5" id="in2"></td>
+    </tr>
+
+    <tr>
+      <td>93ZZ-A</td>
+      <td>$28.99</td>
+      <td><input name = "ZZA" type = "text" value ="0" size="5" id="in3"></td>
+    </tr>
+  </table>
+
+  <p>Please enter your state:
+     <input name="state" type = "text"size = "2" value="MO"/>
+  </p>
+
+  <input type ="submit" value ="Submit Order" />
+</form>
+
+</body>
+</html>
